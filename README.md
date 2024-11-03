@@ -1,4 +1,4 @@
-﻿# Assignment2-Gadot
-Shefreen - Created a github repository and added every other member of the group
+﻿# Assignment 2 - Godot
+Shefreen- Created a github repository and added every other member of the group
 
-Paramvir - Started working on correcting the terrain
+Paramvir- Started working on correcting the terrain
