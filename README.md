@@ -113,6 +113,9 @@ func test_glider_movement():
    - Implement proper error checking
    - Add movement validation
 
+  ![image](https://github.com/user-attachments/assets/cc7f5244-c8ee-4b8b-9fed-4b63480d0fe9)
+
+
 ## Setup and Installation
 
 1. **Environment Setup**
