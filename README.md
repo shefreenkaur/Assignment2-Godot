@@ -78,7 +78,7 @@ func test_path_generation():
 ## Development Process
 
 ### Version Control
-- Git repository: [Repository Link]
+- Git repository: (https://github.com/shefreenkaur/Assignment2-Gadot)
 - Commit history tracks individual contributions
 - Branch structure for feature development
 
