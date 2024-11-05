@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwau0ofxslkjy"]
+
+[ext_resource type="Script" path="res://scripts/terrain_system.gd" id="1_6he7x"]
+[ext_resource type="Script" path="res://scripts/camera_3d.gd" id="2_l2fk3"]
+[ext_resource type="Script" path="res://scripts/directional_light_3d.gd" id="3_eutul"]
+
+[node name="world" type="Node3D"]
+
+[node name="TerrainSystem" type="Node3D" parent="."]
+script = ExtResource("1_6he7x")
+grid_size = null
+quad_size = null
+height_scale = null
+noise_scale = null
+noise_octaves = null
+noise_lacunarity = null
+noise_gain = null
+
+[node name="FlightSystem" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+script = ExtResource("2_l2fk3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+script = ExtResource("3_eutul")

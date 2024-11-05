@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd7dwgdnywbvr"]
+
+[ext_resource type="PackedScene" uid="uid://cbtf7etg0yw3y" path="res://assets/glider.glb" id="1_ogd5i"]
+
+[node name="Glider" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="glider2" parent="MeshInstance3D" instance=ExtResource("1_ogd5i")]
+
+[node name="Camera3D" type="Camera3D" parent="MeshInstance3D/glider2"]
+transform = Transform3D(-0.997156, 0, -0.0753617, -0.0194669, 0.966061, 0.257579, 0.072804, 0.258313, -0.963314, 0, 10.5045, -14.5611)
