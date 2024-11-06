@@ -129,21 +129,13 @@ The `create_terrain_mesh()` function is responsible for converting the heightmap
 - **Normals Calculation**: Normals are computed based on the surrounding terrain, allowing for realistic lighting and shading.
 - **Mesh Creation**: The `ArrayMesh` is created using the generated vertices, texture coordinates, normals, and indices, forming a grid of triangles that represent the terrain surface.
 
-### 6. **Adding Collision**
-
-Once the terrain mesh is created, a `StaticBody3D` and `CollisionShape3D` are added to the scene. This ensures that the glider and other objects in the scene interact with the terrain, preventing them from passing through the ground.
-
-### 7. **Material and Appearance**
+### 6. **Material and Appearance**
 
 The terrain is assigned a simple material with the following settings:
 
 - **Albedo Color**: A slightly blue-tinted white color to simulate a snow-like appearance.
 - **Roughness**: Set to 0.95, which makes the terrain appear rough and diffuse, similar to snow or rough terrain.
 - **Shading Mode**: The material uses vertex colors for shading, ensuring the terrain can reflect the heightmap's variations visually.
-
-### 8. **Regeneration**
-
-The `regenerate()` function allows for the regeneration of the terrain mesh. This is useful for resetting or modifying the terrain dynamically, such as when the user changes the grid size or other settings.
 
 
 ## Actual Implementation Status
