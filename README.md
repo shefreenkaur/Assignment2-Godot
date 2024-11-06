@@ -83,24 +83,17 @@ Movement: The glider moves along the path over time, with its speed controlled b
 ### Shreyas Dutt
 - Set up basic scene structure and camera system
 - Configured initial path parameters
-- **Areas for Improvement**:
-  - Space-filling curve implementation needed
-  - Path generation needs to be more complex than simple circle
+
 
 ### Samardeep Sidhu
 - Worked on camera follow system
 - Basic landscape integration
-- **Areas for Improvement**:
-  - Remove debug spheres from landscape
-  - Fix landscape overlapping issues
-  - Add proper testing assertions
+
 
 ### Sahibjeet Singh & Manpreet Singh
 - Assisted with camera controls
 - Helped with path visualization
-- **Areas for Improvement**:
-  - Implement proper red path visualization
-  - Add particle effects for visual enhancement
+
 
 ## Actual Implementation Status
 
