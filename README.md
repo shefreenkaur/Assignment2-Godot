@@ -107,7 +107,6 @@ Contributed to terrain smoothing and scaling adjustments
 
 ### Version Control
 - Git repository: (https://github.com/shefreenkaur/Assignment2-Gadot)
-- Commit history tracks individual contributions
 - Branch structure for feature development
 
 
