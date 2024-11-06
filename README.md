@@ -86,7 +86,7 @@ Shreyas Dutt, Manpreet Singh, Samardeep Sidhu, Sahibjeet Singh
 Set up basic scene structure and camera system
 Configured initial path parameters
 Integrated and refined terrain generation, including terrain height mapping and texture blending
-Worked on camera follow system and controls
+Worked on camera follow system
 Assisted with path and terrain visualization
 Contributed to terrain smoothing and scaling adjustments
 ## Actual Implementation Status
