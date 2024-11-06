@@ -80,7 +80,8 @@ Circular Path Creation: At the start of the scene, a circular flight path is gen
 Glider Spawning: A 3D glider is spawned at the beginning of this path and is aligned to move along it.
 Dotted Path: As the glider flies along the circular path, glowing dots are placed along the path to visualize the glider's route.
 Movement: The glider moves along the path over time, with its speed controlled by the flight_speed setting. The path is looped, so the glider keeps flying in a circle indefinitely
-### Shreyas Dutt
+
+### Shreyas Dutt and Manpreet Singh
 - Set up basic scene structure and camera system
 - Configured initial path parameters
 
