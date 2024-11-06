@@ -46,14 +46,12 @@
 2. Simple camera following system
 3. Basic glider movement along path
 4. Initial scene setup and organization
+5. Red path visualization
+6. Proper landscape fixes from Assignment 1
 
 ### Missing/Incomplete Features
-1. Space-filling curve implementation
-2. Red path visualization
-3. Proper glider rolling/banking
-4. Particle effects
-5. Strategic assert function calls for testing
-6. Proper landscape fixes from Assignment 1
+1. Proper glider tilt
+
 
 ## Technical Details
 
@@ -90,29 +88,6 @@ func test_glider_movement():
     assert(path_follow.loop, "Path should be looping")
 ```
 
-## Current Issues and Required Fixes
-
-### Critical Issues
-1. **Path Generation**
-   - Replace circular path with space-filling curve
-   - Implement proper curve sampling
-   - Add red path visualization
-
-2. **Glider Movement**
-   - Implement proper banking/rolling
-   - Fix movement interpolation
-   - Add particle effects
-
-3. **Landscape**
-   - Fix overlapping issues
-   - Remove debug spheres
-   - Proper height management
-
-4. **Testing**
-   - Add strategic assert calls
-   - Implement proper error checking
-   - Add movement validation
-
   ![image](https://github.com/user-attachments/assets/cc7f5244-c8ee-4b8b-9fed-4b63480d0fe9)
 
 
@@ -121,7 +96,7 @@ func test_glider_movement():
 1. **Environment Setup**
 ```bash
 # Clone repository
-git clone [repository-url]
+git clone https://github.com/shefreenkaur/Assignment2-Gadot
 # Open in Godot 4.x
 # Run main scene
 ```
@@ -134,7 +109,7 @@ git clone [repository-url]
 ## Testing Procedures (To Be Implemented)
 
 ```gdscript
-# Example of required test structure
+# Example of the required test structure
 func run_tests():
     test_path_generation()
     test_glider_movement()
