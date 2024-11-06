@@ -125,16 +125,6 @@ git clone https://github.com/shefreenkaur/Assignment2-Gadot
 - `glider.tscn`
 - `main.tscn`
 
-## Testing Procedures (To Be Implemented)
-
-```gdscript
-# Example of the required test structure
-func run_tests():
-    test_path_generation()
-    test_glider_movement()
-    test_landscape_intersection()
-    # Add more test cases
-```
 
 ## Git Integration Status
 
@@ -145,21 +135,4 @@ func run_tests():
   - Glider movement
   - Camera system
 
-### Required Improvements
-- Regular commits with meaningful messages
-- Proper branch management
-- Code review process
-- Issue tracking
 
-## Task Division Verification
-- Each commit linked to specific team member
-- Clear documentation of individual contributions
-- Trackable progress through git history
-
-## Plan for Completion
-1. Implement space-filling curve
-2. Add proper testing assertions
-3. Fix landscape issues
-4. Add missing features (particle effects, rolling)
-5. Proper documentation
-6. Complete test coverage
