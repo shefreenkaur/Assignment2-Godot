@@ -84,16 +84,67 @@ These settings can be adjusted to modify the visual appearance of the path.
 - The various settings (`flight_height`, `circle_radius`, `flight_speed`, etc.) can be adjusted to customize the behavior and appearance of the flight simulation.
 - The use of `PathFollow3D` ensures smooth, continuous movement along the circular path.
 
----
 
-Shreyas Dutt, Manpreet Singh, Samardeep Sidhu
 
-Set up basic scene structure and camera system
-Configured initial path parameters
-Integrated and refined terrain generation, including terrain height mapping and texture blending
-Worked on camera follow system
-Assisted with path and terrain visualization
-Contributed to terrain smoothing and scaling adjustments
+## Terrain Generation Breakdown
+# Shreyas, Manpreet, and Samardeep
+
+
+
+### Overview
+
+This section covers the generation of the terrain used in the 3D Glider Flight System. The terrain is procedurally generated using noise algorithms, and it incorporates various settings to control the size, height, and appearance of the terrain. The terrain is displayed as a mesh with a grid of quads, each representing a small part of the landscape.
+
+### 1. **Grid Settings**
+
+- **`grid_size`**: This variable defines the number of quads in the terrain grid, with default values of `200x200`. The terrain is constructed from these quads.
+- **`quad_size`**: The size of each quad in the grid. A smaller value results in a more detailed terrain mesh.
+
+### 2. **Height Settings**
+
+- **`height_scale`**: Controls the vertical scaling of the terrain. The default value is `50.0`, and this affects how high or low the terrain can go.
+- **`base_height`**: Sets the baseline height of the terrain. This allows for creating flat or elevated ground as a starting point before adding noise-based variations.
+
+### 3. **Noise Settings**
+
+- **`noise_scale`**: Controls the frequency of the noise used to generate the terrain. A larger value results in larger, less frequent noise features.
+- **`noise_octaves`**: Specifies the number of noise layers to be applied, which allows for more complex and varied terrain features.
+- **`noise_lacunarity`** and **`noise_gain`**: These control the roughness and intensity of the noise, respectively. Adjusting these values creates more or less pronounced terrain features.
+
+### 4. **Generating the Height Map**
+
+The `generate_height_map()` function creates the terrain's heightmap by using a FastNoiseLite object to generate 2D noise. The heightmap is calculated based on several factors:
+
+- **Noise Generation**: Noise is generated using the `noise.get_noise_2d()` function, which outputs a value between -1 and 1. This value is scaled and smoothed to create more natural-looking terrain.
+- **Distance-Based Modifications**: To make the terrain more interesting, the noise values are modified based on their distance from the center of the grid. A smooth falloff is applied to ensure the terrain is lower at the edges.
+- **Edge Smoothing**: At the edges of the terrain, the height values are reduced to create a more natural boundary. This ensures the terrain smoothly transitions out to the edges rather than abruptly cutting off.
+
+### 5. **Creating the Terrain Mesh**
+
+The `create_terrain_mesh()` function is responsible for converting the heightmap into a 3D mesh, which will be displayed in the scene. Key steps include:
+
+- **Vertices Generation**: For each point in the heightmap, a vertex is created at that point's coordinates. The vertex height is determined by the corresponding heightmap value.
+- **Smoothing Heights**: Neighboring points' heights are averaged to smooth out sudden height changes, ensuring the terrain looks more natural.
+- **Normals Calculation**: Normals are computed based on the surrounding terrain, allowing for realistic lighting and shading.
+- **Mesh Creation**: The `ArrayMesh` is created using the generated vertices, texture coordinates, normals, and indices, forming a grid of triangles that represent the terrain surface.
+
+### 6. **Adding Collision**
+
+Once the terrain mesh is created, a `StaticBody3D` and `CollisionShape3D` are added to the scene. This ensures that the glider and other objects in the scene interact with the terrain, preventing them from passing through the ground.
+
+### 7. **Material and Appearance**
+
+The terrain is assigned a simple material with the following settings:
+
+- **Albedo Color**: A slightly blue-tinted white color to simulate a snow-like appearance.
+- **Roughness**: Set to 0.95, which makes the terrain appear rough and diffuse, similar to snow or rough terrain.
+- **Shading Mode**: The material uses vertex colors for shading, ensuring the terrain can reflect the heightmap's variations visually.
+
+### 8. **Regeneration**
+
+The `regenerate()` function allows for the regeneration of the terrain mesh. This is useful for resetting or modifying the terrain dynamically, such as when the user changes the grid size or other settings.
+
+
 ## Actual Implementation Status
 
 ### Completed Features
