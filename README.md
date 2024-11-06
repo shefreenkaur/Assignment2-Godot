@@ -7,13 +7,13 @@ This project simulates the movement of a glider along a circular flight path, wi
 ## 1. Flight Settings
 
 - **`flight_height`**: The height at which the glider flies, fixed at 35 units above the ground.  
-  *Note*: Initially set at 20, which caused the glider to collide with the terrain (i.e., the plane passed through the terrain).
+  *Note*: initially we set it at 20 which made the plane collide with the terrain (by collision we mean that the plane passes through the terrain)
 
 - **`circle_radius`**: Defines the radius of the circular flight path, set to 25 units.  
-  *Note*: Initially set to 40, which moved the glider out of the terrain. The final setting improves the scene's appearance.
+  *Note*: (initially set to 40, however it moves the plane out of the terrain, the intitial scene doesn't appear as good)
 
 - **`flight_speed`**: Controls how fast the glider moves along the path.  
-  *Note*: This setting can be adjusted for different speeds.
+  *Note*: All these setting can be adjusted for different speeds.
 
 ## 2. Path Visual Settings
 
@@ -49,7 +49,8 @@ These settings can be adjusted to modify the visual appearance of the path.
 - Loads the glider model from a scene file (`glider.tscn`), instantiates it, and positions it at the start of the path.
 - The glider is positioned and rotated correctly to face forward along the path.
 - An extra `Node3D` (`orientation_holder`) is used to manage the glider’s orientation, keeping it aligned with the path’s direction.  
-  *Note*: Other attempts to fix the plane using different methods (e.g., drag and drop of `plane.glb`) caused errors, so this approach was finalized after multiple tests.
+  *Note*: we tried other ways to 'fixing' the plane initially including just drag and drop of plane.glb, but due to errors further in code I wasn't able to further use it.
+me(Shefreen), Paramvir and Sahib then collectively tried to work on it and finalised this method instead after trying other ways various times
 
 ### `update_glider_movement(delta)`
 - Moves the glider along the circular path.
@@ -84,7 +85,7 @@ These settings can be adjusted to modify the visual appearance of the path.
 - The various settings (`flight_height`, `circle_radius`, `flight_speed`, etc.) can be adjusted to customize the behavior and appearance of the flight simulation.
 - The use of `PathFollow3D` ensures smooth, continuous movement along the circular path.
 
-
+---
 
 ## Terrain Generation Breakdown
 # Shreyas, Manpreet, and Samardeep
