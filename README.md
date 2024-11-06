@@ -99,10 +99,6 @@ Contributed to terrain smoothing and scaling adjustments
 5. Red path visualization
 6. Proper landscape fixes from Assignment 1
 
-### Missing/Incomplete Features
-1. Proper glider tilt
-
-
 ## Development Process
 
 ### Version Control
