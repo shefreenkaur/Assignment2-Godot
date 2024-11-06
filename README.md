@@ -173,6 +173,7 @@ git clone https://github.com/shefreenkaur/Assignment2-Gadot
 - `flight_system.gd`
 - `glider.tscn`
 - `main.tscn`
+![image](https://github.com/user-attachments/assets/05601585-839a-4192-a5fd-43130aa5a311)
 
 
 ## Git Integration Status
