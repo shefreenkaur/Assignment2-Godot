@@ -1,7 +1,5 @@
 # COMP 360 Assignment 2 - 3D Glider Flight System
 
-## Team Members and Actual Contributions
-
 # Glider Flight Simulation : Shefreen, Paramvir, and Sahib
 
 This project simulates the movement of a glider along a circular flight path, with visual dots representing the path. The settings and functionality of the code are explained below.
