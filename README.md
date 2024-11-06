@@ -1,6 +1,6 @@
 # COMP 360 Assignment 2 - 3D Glider Flight System
 
-# Glider Flight Simulation : Shefreen, Paramvir, and Sahib
+# Glider Flight Simulation : Shefreen, Paramvir, and Sahibjeet
 
 This project simulates the movement of a glider along a circular flight path, with visual dots representing the path. The settings and functionality of the code are explained below.
 
@@ -86,7 +86,7 @@ These settings can be adjusted to modify the visual appearance of the path.
 
 ---
 
-Shreyas Dutt, Manpreet Singh, Samardeep Sidhu, Sahibjeet Singh
+Shreyas Dutt, Manpreet Singh, Samardeep Sidhu
 
 Set up basic scene structure and camera system
 Configured initial path parameters
