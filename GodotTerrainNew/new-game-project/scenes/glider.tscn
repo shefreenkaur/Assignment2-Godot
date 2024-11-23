@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0p3y7rv6luta"]
-
-[ext_resource type="PackedScene" uid="uid://bbcoxwskptnya" path="res://assets/glider.glb" id="1_g4v6n"]
-
-[node name="Node3D" type="Node3D"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-
-[node name="glider2" parent="MeshInstance3D" instance=ExtResource("1_g4v6n")]
