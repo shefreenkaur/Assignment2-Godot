@@ -147,6 +147,8 @@ The terrain is assigned a simple material with the following settings:
 4. Initial scene setup and organization
 5. Red path visualization
 6. Proper landscape fixes from Assignment 1
+7. Rain
+8. Background
 
 ## Development Process
 
@@ -184,5 +186,6 @@ git clone https://github.com/shefreenkaur/Assignment2-Gadot
   - Path generation
   - Glider movement
   - Camera system
+![image](https://github.com/user-attachments/assets/f302699a-beee-4f1d-8615-71c01ac3ab34)
 
 
