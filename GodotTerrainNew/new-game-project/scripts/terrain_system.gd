@@ -14,22 +14,13 @@ extends Node3D
 @export var noise_lacunarity := 2.0
 @export var noise_gain := 0.5
 
-@export_group("Rain Settings")
-@export var rain_enabled := true
-@export var rain_intensity := 1000
-@export var rain_speed := 20.0
-@export var rain_size := 0.05
-@export var rain_area_size := 100.0
-
 var noise: FastNoiseLite
 var height_map: Image
 var terrain_mesh: MeshInstance3D
-var rain_particles: GPUParticles3D
 
 func _ready():
 	generate_height_map()
 	create_terrain_mesh()
-	setup_rain()
 
 func generate_height_map():
 	noise = FastNoiseLite.new()
@@ -142,10 +133,10 @@ func create_terrain_mesh():
 	terrain_mesh.mesh = array_mesh
 	add_child(terrain_mesh)
 	
-	# Create terrain material
+	# Create snow material with softer appearance
 	var material = StandardMaterial3D.new()
-	material.albedo_color = Color(0.36, 0.54, 0.33)  # Slightly blue-tinted white
-	material.roughness = 0.95
+	material.albedo_color = Color(0.98, 0.98, 1.0)  # Slightly blue-tinted white
+	material.roughness = 0.95  # High roughness for snow
 	material.metallic = 0.0
 	material.metallic_specular = 0.2
 	material.shading_mode = BaseMaterial3D.SHADING_MODE_PER_VERTEX
@@ -159,80 +150,8 @@ func create_terrain_mesh():
 	collision_shape.shape = array_mesh.create_trimesh_shape()
 	static_body.add_child(collision_shape)
 
-func setup_rain():
-	# Create rain particle system
-	rain_particles = GPUParticles3D.new()
-	add_child(rain_particles)
-	
-	# Position the emitter above the terrain
-	var terrain_center = Vector3(grid_size.x * quad_size * 0.5, height_scale + 20.0, grid_size.y * quad_size * 0.5)
-	rain_particles.position = terrain_center
-	
-	# Create particle material
-	var particle_material = ParticleProcessMaterial.new()
-	
-	# Basic particle properties
-	particle_material.emission_shape = ParticleProcessMaterial.EMISSION_SHAPE_BOX
-	particle_material.emission_box_extents = Vector3(rain_area_size, 0.1, rain_area_size)
-	
-	# Particle movement
-	particle_material.direction = Vector3(0, -1, 0)
-	particle_material.spread = 7.0
-	particle_material.gravity = Vector3(0, -rain_speed, 0)
-	particle_material.initial_velocity_min = rain_speed * 0.8
-	particle_material.initial_velocity_max = rain_speed
-	
-	# Particle appearance
-	particle_material.scale_min = rain_size * 1.8
-	particle_material.scale_max = rain_size * 2.2
-	
-	# Particle lifetime
-	particle_material.lifetime_randomness = 0.2
-	
-	# Apply material to particles
-	rain_particles.process_material = particle_material
-	rain_particles.amount = rain_intensity
-	rain_particles.lifetime = 2.0
-	rain_particles.explosiveness = 0.0
-	rain_particles.randomness = 1.0
-	rain_particles.visibility_aabb = AABB(-Vector3.ONE * rain_area_size, Vector3.ONE * rain_area_size * 2)
-	
-	# Create mesh for rain drops
-	var drop_mesh = QuadMesh.new()
-	drop_mesh.size = Vector2(0.05, 0.3)  # Elongated rain drops
-	
-	# Create material for rain drops
-	var drop_material = StandardMaterial3D.new()
-	drop_material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-	drop_material.albedo_color = Color(0.7, 0.7, 0.8, 0.3)  # Slightly blue, transparent
-	drop_material.emission_enabled = true
-	drop_material.emission = Color(0.7, 0.7, 0.8, 1.0)
-	drop_material.emission_energy_multiplier = 1
-	drop_material.billboard_mode = BaseMaterial3D.BILLBOARD_ENABLED
-	drop_material.vertex_color_use_as_albedo = true
-	drop_mesh.material = drop_material
-	
-	# Apply mesh to particles
-	rain_particles.draw_pass_1 = drop_mesh
-	
-	# Enable or disable based on setting
-	rain_particles.emitting = rain_enabled
-
-func toggle_rain():
-	rain_enabled = !rain_enabled
-	if rain_particles:
-		rain_particles.emitting = rain_enabled
-
-func set_rain_intensity(intensity: float):
-	rain_intensity = intensity
-	if rain_particles:
-		rain_particles.amount = rain_intensity
-
 func regenerate():
 	if terrain_mesh:
 		terrain_mesh.queue_free()
-	if rain_particles:
-		rain_particles.queue_free()
 	generate_height_map()
 	create_terrain_mesh()
-	setup_rain()

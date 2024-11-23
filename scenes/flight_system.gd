@@ -3,7 +3,7 @@ extends Node3D
 @export_group("Flight Settings")
 @export var flight_height := 35.0
 @export var circle_radius := 25.0
-@export var flight_speed := 4.0
+@export var flight_speed := 5.0
 
 @export_group("Path Visual Settings")
 @export var dot_spacing := 1.0

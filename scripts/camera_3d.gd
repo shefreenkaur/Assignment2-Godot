@@ -38,3 +38,18 @@ func _input(event):
 			translate(Vector3(0, 0, -2))
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			translate(Vector3(0, 0, 2))
+
+# Optional: Add keyboard controls for camera movement
+func _process(delta):
+	if Input.is_key_pressed(KEY_W):
+		translate(Vector3(0, 0, -movement_speed))
+	if Input.is_key_pressed(KEY_S):
+		translate(Vector3(0, 0, movement_speed))
+	if Input.is_key_pressed(KEY_A):
+		translate(Vector3(-movement_speed, 0, 0))
+	if Input.is_key_pressed(KEY_D):
+		translate(Vector3(movement_speed, 0, 0))
+	if Input.is_key_pressed(KEY_Q):
+		translate(Vector3(0, movement_speed, 0))
+	if Input.is_key_pressed(KEY_E):
+		translate(Vector3(0, -movement_speed, 0))
