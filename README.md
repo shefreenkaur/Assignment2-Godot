@@ -158,7 +158,8 @@ The terrain is assigned a simple material with the following settings:
 
 
 
-  ![image](https://github.com/user-attachments/assets/cc7f5244-c8ee-4b8b-9fed-4b63480d0fe9)
+![image](https://github.com/user-attachments/assets/26d3e941-10a9-4bfd-867b-67658dfbbfd9)
+
 
 
 ## Setup and Installation
@@ -175,7 +176,9 @@ git clone https://github.com/shefreenkaur/Assignment2-Gadot
 - `flight_system.gd`
 - `glider.tscn`
 - `main.tscn`
-![image](https://github.com/user-attachments/assets/05601585-839a-4192-a5fd-43130aa5a311)
+
+![image](https://github.com/user-attachments/assets/967332f8-42db-4c92-9b14-e44e440b814d)
+
 
 
 ## Git Integration Status
